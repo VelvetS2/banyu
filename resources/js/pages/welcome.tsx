@@ -18,7 +18,7 @@ export default function Welcome() {
                         Mitigasi Banjir
                     </span>
                     <h1 className="max-w-3xl text-4xl font-bold leading-tight text-neutral-900 sm:text-5xl">
-                        Pantau Curah Hujan &amp; Lokasi Evakuasi
+                        Curah Hujan &amp; Lokasi Evakuasi
                         <br />
                         <span style={{ color: BANYU_BRAND }}>
                             Provinsi Lampung
