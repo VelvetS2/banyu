@@ -33,19 +33,13 @@ export default function Welcome() {
                             terdekat.
                         </p>
 
-                        <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row">
+                        <div className="mt-10 flex">
                             <a
                                 href="/peta"
                                 className="inline-flex items-center justify-center rounded-md px-6 py-3 text-sm font-semibold text-white shadow-sm transition-opacity hover:opacity-90"
                                 style={{ backgroundColor: BANYU_BRAND }}
                             >
                                 Buka Peta Interaktif
-                            </a>
-                            <a
-                                href="#fitur"
-                                className="inline-flex items-center justify-center rounded-md border border-neutral-300 bg-white px-6 py-3 text-sm font-semibold text-neutral-800 transition-colors hover:bg-neutral-100"
-                            >
-                                Pelajari Fitur
                             </a>
                         </div>
                     </section>
