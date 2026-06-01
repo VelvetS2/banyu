@@ -10,7 +10,7 @@ export default function BanyuLayout({ children }: AppLayoutProps) {
             <SiteSidebar />
             <div className="flex min-h-screen w-full flex-col">
                 <TopBar />
-                <AppContent>{children}</AppContent>
+                <AppContent variant="sidebar">{children}</AppContent>
             </div>
         </AppShell>
     );

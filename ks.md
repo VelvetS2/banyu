@@ -6,12 +6,13 @@ Warna identitas website Banyu. Digunakan di seluruh UI (TopBar, tombol, status, 
 
 | Peran | Hex | Penggunaan |
 |---|---|---|
-| Latar utama | `#F3F4F6` | Background halaman dan area konten (mode terang) |
+| Latar utama (mode terang) | `#F3F4F6` | Background halaman dan area konten pada mode terang |
+| Latar utama (mode gelap) | `#171717` | Background halaman dan area konten pada mode gelap (Tailwind `neutral-900`) |
 | Aksen / Brand | `#dc143c` | Warna merah utama — tombol primer, status siaga, judul aksen, link aktif |
 
 Catatan:
-- Mode gelap (dark mode) tetap memakai palet netral Tailwind untuk body (abu-abu), tetapi elemen interaktif/brand seperti tombol primer tetap menggunakan `#dc143c`.
-- Semua komponen baru **wajib** menggunakan dua warna di atas sebagai acuan visual utama; warna lain dari Tailwind hanya untuk abu-abu, border, dan teks.
+- Mode gelap (dark mode) tetap memakai palet netral Tailwind untuk body (abu-abu gelap `#171717`), tetapi elemen interaktif/brand seperti tombol primer tetap menggunakan `#dc143c`.
+- Semua komponen baru **wajib** menggunakan tiga warna di atas sebagai acuan visual utama; warna lain dari Tailwind hanya untuk abu-abu, border, dan teks.
 
 ---
 
