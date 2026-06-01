@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(php -m)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(where psql *)",
+      "Bash(psql --version)"
+    ]
+  }
+}
