@@ -7,7 +7,7 @@ export default function Welcome() {
     return (
         <BanyuLayout>
             <Head title="Banyu — Mitigasi Banjir Lampung" />
-            <div className="min-h-[calc(100vh-4rem)] w-full bg-[#f2efe7] dark:bg-neutral-900">
+            <div className="min-h-[calc(100vh-4rem)] w-full bg-[#F3F4F6] dark:bg-neutral-900">
                 <section className="mx-auto flex w-full max-w-7xl flex-col items-center px-6 py-16 text-center">
                     <span
                         className="mb-4 inline-flex items-center rounded-full px-3 py-1 text-xs font-medium uppercase tracking-wider text-white"

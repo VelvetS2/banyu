@@ -6,7 +6,7 @@ Warna identitas website Banyu. Digunakan di seluruh UI (TopBar, tombol, status, 
 
 | Peran | Hex | Penggunaan |
 |---|---|---|
-| Latar utama | `#f2efe7` | Background halaman dan area konten (mode terang) |
+| Latar utama | `#F3F4F6` | Background halaman dan area konten (mode terang) |
 | Aksen / Brand | `#dc143c` | Warna merah utama — tombol primer, status siaga, judul aksen, link aktif |
 
 Catatan:
