@@ -1,4 +1,5 @@
 import { Head } from '@inertiajs/react';
+import { ScanBackground } from '@/components/scan-background';
 
 const BANYU_BRAND = '#dc143c';
 
@@ -6,7 +7,9 @@ export default function Welcome() {
     return (
         <>
             <Head title="Banyu — Mitigasi Banjir Lampung" />
-            <div className="min-h-screen w-full bg-[#F3F4F6] dark:bg-neutral-900">
+            <div className="relative min-h-screen w-full overflow-hidden bg-[#F3F4F6] dark:bg-neutral-900">
+                <ScanBackground />
+                <div className="relative z-10">
                 <section className="mx-auto flex w-full max-w-7xl flex-col items-center px-6 py-16 text-center">
                     <span
                         className="mb-4 inline-flex items-center rounded-full px-3 py-1 text-xs font-medium uppercase tracking-wider text-white"
@@ -91,6 +94,7 @@ export default function Welcome() {
                     © {new Date().getFullYear()} Banyu — Mitigasi Banjir
                     Provinsi Lampung
                 </footer>
+                </div>
             </div>
         </>
     );
