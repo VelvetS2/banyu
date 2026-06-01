@@ -189,6 +189,35 @@
     }
 }
 
+.dark .banyu-scan-stripe {
+    background: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 18px,
+        rgba(255, 255, 255, 0.05) 18px,
+        rgba(255, 255, 255, 0.05) 19px
+    );
+    opacity: 0.6;
+}
+
+.dark .banyu-scan-glow {
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.08),
+        transparent
+    );
+}
+
+.dark .banyu-scan-line {
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.25),
+        transparent
+    );
+}
+
 @keyframes banyu-scan-move {
     0% {
         transform: translateX(-60px) translateY(-60px);

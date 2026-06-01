@@ -23,14 +23,14 @@ export default function Welcome() {
                         >
                             Mitigasi Banjir
                         </span>
-                        <h1 className="max-w-3xl text-4xl font-bold leading-tight text-neutral-900 sm:text-5xl">
+                        <h1 className="max-w-3xl text-4xl font-bold leading-tight text-neutral-900 sm:text-5xl dark:text-neutral-100">
                             Curah Hujan &amp; Lokasi Evakuasi
                             <br />
                             <span style={{ color: BANYU_BRAND }}>
                                 Provinsi Lampung
                             </span>
                         </h1>
-                        <p className="mt-6 max-w-2xl text-base text-neutral-700 sm:text-lg">
+                        <p className="mt-6 max-w-2xl text-base text-neutral-700 sm:text-lg dark:text-neutral-300">
                             Sistem pemantau bencana banjir berbasis web yang
                             menampilkan peta interaktif 229 kecamatan di
                             Lampung, menggabungkan data BMKG dan Open-Meteo
