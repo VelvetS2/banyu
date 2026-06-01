@@ -1,5 +1,18 @@
 # Kebutuhan Sistem — Website Mitigasi Banjir Provinsi Lampung
 
+## Palet Warna
+
+Warna identitas website Banyu. Digunakan di seluruh UI (TopBar, tombol, status, dsb).
+
+| Peran | Hex | Penggunaan |
+|---|---|---|
+| Latar utama | `#f2efe7` | Background halaman dan area konten (mode terang) |
+| Aksen / Brand | `#dc143c` | Warna merah utama — tombol primer, status siaga, judul aksen, link aktif |
+
+Catatan:
+- Mode gelap (dark mode) tetap memakai palet netral Tailwind untuk body (abu-abu), tetapi elemen interaktif/brand seperti tombol primer tetap menggunakan `#dc143c`.
+- Semua komponen baru **wajib** menggunakan dua warna di atas sebagai acuan visual utama; warna lain dari Tailwind hanya untuk abu-abu, border, dan teks.
+
 ---
 
 ## 1. Latar Belakang

@@ -28,8 +28,11 @@ export function TopBar({ appName = 'Banyu' }: Props) {
                     href="/"
                     className="flex items-center gap-2 font-semibold"
                 >
-                    <span className="flex aspect-square size-8 items-center justify-center rounded-md bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900">
-                        <AppLogoIcon className="size-5 fill-current" />
+                    <span
+                        className="flex aspect-square size-8 items-center justify-center rounded-md text-white"
+                        style={{ backgroundColor: '#dc143c' }}
+                    >
+                        <AppLogoIcon className="size-5 fill-current text-white" />
                     </span>
                     <span className="hidden text-base sm:inline">
                         {appName}
