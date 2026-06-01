@@ -1,9 +1,14 @@
 import { Head } from '@inertiajs/react';
+import { Moon, Sun } from 'lucide-react';
 import { ScanBackground } from '@/components/scan-background';
+import { useAppearance } from '@/hooks/use-appearance';
 
 const BANYU_BRAND = '#dc143c';
 
 export default function Welcome() {
+    const { resolvedAppearance, updateAppearance } = useAppearance();
+    const isDark = resolvedAppearance === 'dark';
+
     return (
         <>
             <Head title="Banyu — Mitigasi Banjir Lampung" />
@@ -33,7 +38,7 @@ export default function Welcome() {
                             terdekat.
                         </p>
 
-                        <div className="mt-10 flex">
+                        <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row">
                             <a
                                 href="/peta"
                                 className="inline-flex items-center justify-center rounded-md px-6 py-3 text-sm font-semibold text-white shadow-sm transition-opacity hover:opacity-90"
@@ -41,6 +46,25 @@ export default function Welcome() {
                             >
                                 Buka Peta Interaktif
                             </a>
+                            <button
+                                type="button"
+                                onClick={() =>
+                                    updateAppearance(isDark ? 'light' : 'dark')
+                                }
+                                className="inline-flex items-center justify-center gap-2 rounded-md border border-neutral-300 bg-white px-6 py-3 text-sm font-semibold text-neutral-800 transition-colors hover:bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-700"
+                                aria-label={
+                                    isDark
+                                        ? 'Beralih ke mode terang'
+                                        : 'Beralih ke mode gelap'
+                                }
+                            >
+                                {isDark ? (
+                                    <Sun className="size-4" />
+                                ) : (
+                                    <Moon className="size-4" />
+                                )}
+                                {isDark ? 'Mode Terang' : 'Mode Gelap'}
+                            </button>
                         </div>
                     </section>
 
