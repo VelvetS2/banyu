@@ -1,9 +1,10 @@
 import { Link } from '@inertiajs/react';
-import { Bell, Moon, Search, Sun } from 'lucide-react';
+import { Bell, Moon, PanelLeft, Search, Sun } from 'lucide-react';
 import { useState } from 'react';
 import AppLogoIcon from '@/components/app-logo-icon';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { useSidebar } from '@/components/ui/sidebar';
 import { useAppearance } from '@/hooks/use-appearance';
 import { cn } from '@/lib/utils';
 
@@ -15,6 +16,7 @@ export function TopBar({ appName = 'Banyu' }: Props) {
     const { resolvedAppearance, updateAppearance } = useAppearance();
     const isDark = resolvedAppearance === 'dark';
     const [query, setQuery] = useState('');
+    const { toggleSidebar } = useSidebar();
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -65,6 +67,16 @@ export function TopBar({ appName = 'Banyu' }: Props) {
                 </form>
 
                 <div className="flex items-center gap-1">
+                    <Button
+                        type="button"
+                        variant="ghost"
+                        size="icon"
+                        className="size-10"
+                        aria-label="Buka atau tutup sidebar"
+                        onClick={toggleSidebar}
+                    >
+                        <PanelLeft className="size-5" />
+                    </Button>
                     <Button
                         type="button"
                         variant="ghost"
