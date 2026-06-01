@@ -53,20 +53,20 @@ export default function Welcome() {
                     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
                         {[
                             {
-                                title: '229 Kecamatan',
-                                desc: 'Peta poligon per kecamatan dengan pewarnaan intensitas curah hujan.',
+                                title: 'Peta 229 Kecamatan',
+                                desc: 'Peta interaktif Provinsi Lampung lengkap dengan poligon seluruh kecamatan, terpusat dan diperbarui otomatis.',
                             },
                             {
-                                title: 'Sumber Ganda',
-                                desc: 'Data BMKG (kabupaten) + Open-Meteo (kecamatan) dipakai bersamaan.',
+                                title: 'Curah Hujan Real-Time',
+                                desc: 'Pewarnaan poligon mengikuti intensitas curah hujan terbaru yang diambil dari BMKG dan Open-Meteo secara bergantian.',
+                            },
+                            {
+                                title: 'Klasifikasi 5 Level',
+                                desc: 'Status warna dari hijau (aman) hingga merah tua (ekstrem) untuk membantu membaca tingkat risiko banjir dengan cepat.',
                             },
                             {
                                 title: 'Lokasi Evakuasi',
-                                desc: 'Titik evakuasi resmi dengan detail alamat dan kapasitas.',
-                            },
-                            {
-                                title: 'Mode Gelap',
-                                desc: 'Tersedia mode terang dan gelap dengan preferensi tersimpan.',
+                                desc: 'Daftar dan titik lokasi evakuasi resmi per kabupaten beserta alamat, kecamatan, dan kapasitas tampung.',
                             },
                         ].map((item) => (
                             <div
