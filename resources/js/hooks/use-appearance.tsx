@@ -48,8 +48,20 @@ const applyTheme = (appearance: Appearance): void => {
 
     const isDark = isDarkMode(appearance);
 
-    document.documentElement.classList.toggle('dark', isDark);
-    document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
+    const swap = (): void => {
+        document.documentElement.classList.toggle('dark', isDark);
+        document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
+    };
+
+    const doc = document as Document & {
+        startViewTransition?: (cb: () => void) => { ready: Promise<void> };
+    };
+
+    if (typeof doc.startViewTransition === 'function') {
+        doc.startViewTransition(swap);
+    } else {
+        swap();
+    }
 };
 
 const subscribe = (callback: () => void) => {

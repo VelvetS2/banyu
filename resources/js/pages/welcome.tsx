@@ -52,6 +52,7 @@ export default function Welcome() {
                                     updateAppearance(isDark ? 'light' : 'dark')
                                 }
                                 className="inline-flex items-center justify-center gap-2 rounded-md border border-neutral-300 bg-white px-6 py-3 text-sm font-semibold text-neutral-800 transition-colors hover:bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-700"
+                                style={{ viewTransitionName: 'theme-toggle' }}
                                 aria-label={
                                     isDark
                                         ? 'Beralih ke mode terang'

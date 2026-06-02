@@ -47,16 +47,6 @@ Setiap kecamatan memiliki popup yang menampilkan:
 - Indikator warna dan status kondisi curah hujan
 - Waktu pembaruan data terakhir
 
-### 3.3 Klasifikasi Intensitas Curah Hujan
-
-| Intensitas (mm/jam) | Warna | Status |
-|---|---|---|
-| < 10 mm/jam | Hijau | Tidak hujan / gerimis, aman |
-| 10 – 20 mm/jam | Kuning | Hujan sedang, pantau kondisi |
-| 20 – 50 mm/jam | Oranye | Hujan deras, waspada |
-| 50 – 100 mm/jam | Merah Muda | Hujan sangat lebat, siaga |
-| > 100 mm/jam | Merah Tua | Ekstrem, potensi banjir tinggi |
-
 ### 3.4 Data Curah Hujan Real-Time dari 2 Sumber
 - **BMKG** — menyediakan data curah hujan tingkat kabupaten/kota (15 wilayah)
 - **Open-Meteo** — menyediakan data curah hujan tingkat kecamatan (229 kecamatan) berdasarkan koordinat pusat tiap kecamatan
