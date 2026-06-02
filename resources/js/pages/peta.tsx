@@ -2,6 +2,8 @@ import { Head } from '@inertiajs/react';
 import L from 'leaflet';
 import { useEffect, useState } from 'react';
 import { GeoJSON, MapContainer, TileLayer } from 'react-leaflet';
+import { rainfallDummy } from '@/data/rainfallDummy';
+import { classifyRainfall } from '@/utils/classifyRainfall';
 import { peta } from '@/routes';
 
 L.Icon.Default.mergeOptions({
@@ -25,18 +27,70 @@ type KecamatanProperties = {
     kabupaten: string;
 };
 
-type KecamatanFeature = GeoJSON.Feature<GeoJSON.Geometry, KecamatanProperties>;
 type KecamatanCollection = GeoJSON.FeatureCollection<
     GeoJSON.Geometry,
     KecamatanProperties
 >;
 
-const BATAS_STYLE: L.StyleFunction = () => ({
-    color: '#6b7280',
-    weight: 1,
-    fillColor: 'transparent',
-    fillOpacity: 0,
-});
+const DEFAULT_RAINFALL = 0;
+
+function styleKecamatan(
+    feature: GeoJSON.Feature<GeoJSON.Geometry, KecamatanProperties> | undefined,
+): L.PathOptions {
+    const id = feature?.properties.id ?? '';
+    const mmPerJam = rainfallDummy[id] ?? DEFAULT_RAINFALL;
+    const { warna } = classifyRainfall(mmPerJam);
+
+    return {
+        color: '#6b7280',
+        weight: 1,
+        fillColor: warna,
+        fillOpacity: 0.55,
+    };
+}
+
+function popupContent(
+    feature: GeoJSON.Feature<GeoJSON.Geometry, KecamatanProperties>,
+): string {
+    const { kecamatan, kabupaten } = feature.properties;
+    const id = feature.properties.id;
+    const mmPerJam = rainfallDummy[id] ?? DEFAULT_RAINFALL;
+    const { warna, status } = classifyRainfall(mmPerJam);
+
+    return `
+        <div class="kecamatan-popup">
+            <div class="kecamatan-popup__header">
+                <span class="kecamatan-popup__dot" style="background-color: ${warna}"></span>
+                <span class="kecamatan-popup__title">${kecamatan}</span>
+            </div>
+            <dl class="kecamatan-popup__list">
+                <div><dt>Kabupaten</dt><dd>${kabupaten}</dd></div>
+                <div><dt>Curah hujan</dt><dd>${mmPerJam.toFixed(1)} mm/jam</dd></div>
+                <div><dt>Status</dt><dd>${status}</dd></div>
+                <div><dt>Diperbarui</dt><dd>-</dd></div>
+            </dl>
+        </div>
+    `;
+}
+
+function onEachKecamatan(
+    feature: GeoJSON.Feature<GeoJSON.Geometry, KecamatanProperties>,
+    layer: L.Layer,
+): void {
+    if (!(layer instanceof L.Path)) {
+        return;
+    }
+    const popup = popupContent(feature);
+    layer.bindPopup(popup);
+    layer.on('mouseover', (event) => {
+        const target = event.target as L.Path;
+        target.setStyle({ weight: 2, color: '#dc143c' });
+    });
+    layer.on('mouseout', (event) => {
+        const target = event.target as L.Path;
+        target.setStyle({ weight: 1, color: '#6b7280' });
+    });
+}
 
 export default function Peta() {
     const [kecamatan, setKecamatan] = useState<KecamatanCollection | null>(
@@ -84,7 +138,8 @@ export default function Peta() {
                             <GeoJSON
                                 key={kecamatan.features.length}
                                 data={kecamatan as unknown as GeoJSON.GeoJsonObject}
-                                style={BATAS_STYLE as L.StyleFunction}
+                                style={styleKecamatan as L.StyleFunction}
+                                onEachFeature={onEachKecamatan}
                             />
                         )}
                     </MapContainer>
