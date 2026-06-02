@@ -49,8 +49,8 @@ export function SiteSidebar() {
 
     return (
         <Sidebar collapsible="icon" variant="inset">
-            <SidebarHeader>
-                <SidebarMenu>
+            <SidebarHeader className="gap-0">
+                <SidebarMenu className="gap-0">
                     <SidebarMenuItem>
                         <SidebarMenuButton
                             size="lg"
@@ -70,9 +70,6 @@ export function SiteSidebar() {
                                     <span className="truncate font-semibold">
                                         {appName}
                                     </span>
-                                    <span className="truncate text-xs text-neutral-500 dark:text-neutral-400">
-                                        Mitigasi Banjir Lampung
-                                    </span>
                                 </span>
                             </Link>
                         </SidebarMenuButton>
@@ -81,7 +78,7 @@ export function SiteSidebar() {
             </SidebarHeader>
 
             <SidebarContent>
-                <SidebarMenu>
+                <SidebarMenu className="gap-0">
                     {mainNavItems.map((item) => (
                         <SidebarMenuItem key={item.title}>
                             <SidebarMenuButton
@@ -100,7 +97,7 @@ export function SiteSidebar() {
             </SidebarContent>
 
             <SidebarFooter>
-                <SidebarMenu>
+                <SidebarMenu className="gap-0">
                     {footerNavItems.map((item) => (
                         <SidebarMenuItem key={item.title}>
                             <SidebarMenuButton

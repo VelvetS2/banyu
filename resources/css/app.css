@@ -2,6 +2,8 @@
 
 @import 'tw-animate-css';
 
+@import 'leaflet/dist/leaflet.css';
+
 @source '../views';
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 
@@ -62,7 +64,7 @@
 }
 
 :root {
-    --background: oklch(1 0 0);
+    --background: oklch(0.967 0.003 264);
     --foreground: oklch(0.145 0 0);
     --card: oklch(1 0 0);
     --card-foreground: oklch(0.145 0 0);
@@ -87,18 +89,18 @@
     --chart-4: oklch(0.828 0.189 84.429);
     --chart-5: oklch(0.769 0.188 70.08);
     --radius: 0.625rem;
-    --sidebar: oklch(0.985 0 0);
+    --sidebar: oklch(0.967 0.003 264);
     --sidebar-foreground: oklch(0.145 0 0);
-    --sidebar-primary: oklch(0.205 0 0);
+    --sidebar-primary: oklch(0.557 0.231 22.31);
     --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.97 0 0);
+    --sidebar-accent: oklch(0.922 0 0);
     --sidebar-accent-foreground: oklch(0.205 0 0);
     --sidebar-border: oklch(0.922 0 0);
     --sidebar-ring: oklch(0.87 0 0);
 }
 
 .dark {
-    --background: oklch(0.145 0 0);
+    --background: oklch(0.205 0 0);
     --foreground: oklch(0.985 0 0);
     --card: oklch(0.145 0 0);
     --card-foreground: oklch(0.985 0 0);
@@ -124,7 +126,7 @@
     --chart-5: oklch(0.645 0.246 16.439);
     --sidebar: oklch(0.205 0 0);
     --sidebar-foreground: oklch(0.985 0 0);
-    --sidebar-primary: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.557 0.231 22.31);
     --sidebar-primary-foreground: oklch(0.985 0 0);
     --sidebar-accent: oklch(0.269 0 0);
     --sidebar-accent-foreground: oklch(0.985 0 0);
@@ -235,6 +237,45 @@
         left: 120%;
     }
 }
+
+.leaflet-popup-content-wrapper {
+    @apply rounded-md border border-neutral-200 bg-[#F3F4F6] p-3 text-neutral-900 shadow-sm dark:border-neutral-800 dark:bg-[#171717] dark:text-neutral-100;
+}
+
+.leaflet-popup-tip {
+    @apply border-neutral-200 dark:border-neutral-800;
+}
+
+.leaflet-popup-content {
+    @apply m-0 text-sm;
+}
+
+.kecamatan-popup__header {
+    @apply mb-2 flex items-center gap-2;
+}
+
+.kecamatan-popup__dot {
+    @apply inline-block size-3 rounded-full ring-2 ring-white dark:ring-neutral-900;
+}
+
+.kecamatan-popup__title {
+    @apply text-sm font-semibold;
+}
+
+.kecamatan-popup__list {
+    @apply grid gap-1;
+}
+
+.kecamatan-popup__list > div {
+    @apply flex items-center justify-between gap-3;
+}
+
+.kecamatan-popup__list dt {
+    @apply text-xs text-neutral-500 dark:text-neutral-400;
+}
+
+.kecamatan-popup__list dd {
+    @apply text-sm font-medium;
 
 @keyframes banyu-scan-line {
     0% {

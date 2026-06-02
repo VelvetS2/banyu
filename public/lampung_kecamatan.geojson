@@ -1,0 +1,46 @@
+{
+  "type": "FeatureCollection",
+  "name": "lampung_kecamatan",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1801010",
+        "kecamatan": "Kecamatan Contoh 1",
+        "kabupaten": "Lampung Tengah"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [105.20, -4.40],
+            [105.35, -4.40],
+            [105.35, -4.55],
+            [105.20, -4.55],
+            [105.20, -4.40]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1801011",
+        "kecamatan": "Kecamatan Contoh 2",
+        "kabupaten": "Lampung Tengah"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [105.35, -4.40],
+            [105.50, -4.40],
+            [105.50, -4.55],
+            [105.35, -4.55],
+            [105.35, -4.40]
+          ]
+        ]
+      }
+    }
+  ]
+}
