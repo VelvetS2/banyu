@@ -1,9 +1,9 @@
-import { Bell, Moon, Search, Sun } from 'lucide-react';
-import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useAppearance } from '@/hooks/use-appearance';
 import { cn } from '@/lib/utils';
+import { Bell, Moon, Search, Sun } from 'lucide-react';
+import { useState } from 'react';
 
 type Props = {
     appName?: string;
@@ -20,7 +20,7 @@ export function TopBar({ appName = 'Banyu' }: Props) {
     };
 
     return (
-        <header className="sticky top-0 z-40 w-full border-b border-neutral-200 bg-[#F3F4F6] text-neutral-900 dark:border-neutral-800 dark:bg-[#171717] dark:text-neutral-100">
+        <header className="sticky top-0 z-40 w-full border-b border-neutral-200 bg-transparent text-neutral-900 backdrop-blur-md dark:border-neutral-800 dark:bg-transparent dark:text-neutral-100">
             <div className="mx-auto flex h-16 w-full items-center gap-3 px-4 md:max-w-7xl">
                 <form
                     onSubmit={handleSubmit}
