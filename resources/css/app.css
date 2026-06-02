@@ -276,6 +276,7 @@
 
 .kecamatan-popup__list dd {
     @apply text-sm font-medium;
+}
 
 @keyframes banyu-scan-line {
     0% {
